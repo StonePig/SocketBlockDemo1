@@ -1,0 +1,4 @@
+#Fri Jul 20 12:01:07 CST 2018
+base.0=C\:\\Users\\Administrator\\AndroidStudioProjects\\SocketBlockDemo1\\SocketBlockDemo\\build\\intermediates\\transforms\\dexMerger\\debug\\51
+path.0=classes.dex
+renamed.0=classes.dex
