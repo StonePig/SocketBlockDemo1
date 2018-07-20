@@ -10,7 +10,7 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="300dip"
+        android:layout_height="400dip"
          android:id="@+id/res_txt"
         android:text="@string/hello_world" />
     
