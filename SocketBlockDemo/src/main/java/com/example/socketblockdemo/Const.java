@@ -2,10 +2,10 @@ package com.example.socketblockdemo;
 
 public class Const
 {
-	
-   public final static String SOCKET_SERVER = "103.46.128.43";
 
-	public final static int SOCKET_PORT = 12187;
+   public final static String SOCKET_SERVER = "47.94.20.34";
+
+	public final static int SOCKET_PORT = 10111;
 	
 	// 默认timeout 时间 60s
 	public final static int SOCKET_TIMOUT = 60 * 1000;

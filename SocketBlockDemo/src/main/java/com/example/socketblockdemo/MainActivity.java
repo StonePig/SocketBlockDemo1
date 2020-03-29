@@ -49,6 +49,13 @@ class MainActivity extends Activity implements OnClickListener
 
 	Button			btn;
 
+	Button			shutdown_btn;
+
+	Button			shutdown_cancle_btn;
+
+	Button			lockscreen_btn;
+
+
 	Handler handler = null;
 
 	@Override protected void onCreate(Bundle savedInstanceState)
@@ -59,9 +66,18 @@ class MainActivity extends Activity implements OnClickListener
 		textView			= (TextView) this.findViewById(R.id.res_txt);
 		editText			= (EditText) this.findViewById(R.id.socket_txt);
 		btn 				= (Button) this.findViewById(R.id.send_btn);
+		shutdown_btn 		= (Button) this.findViewById(R.id.shutdown_btn);
+		shutdown_cancle_btn 	= (Button) this.findViewById(R.id.shutdown_cancle_btn);
+		lockscreen_btn 		= (Button) this.findViewById(R.id.lockscreen_btn);
 		btn.setOnClickListener(this);
+		shutdown_btn.setOnClickListener(this);
+		shutdown_cancle_btn.setOnClickListener(this);
+		lockscreen_btn.setOnClickListener(this);
 
-		textView.setText("服务器返回消息显示在此");
+		//editText.setVisibility(View.INVISIBLE);
+
+		textView.setText("运行结果：");
+
 
 		NetManager.instance().init(this);
 
@@ -80,11 +96,11 @@ class MainActivity extends Activity implements OnClickListener
 				switch (msg.what)
 					{
 					case 0:
-						showMsg("发送socket失败");
+						showMsg("指令发送失败");
 						break;
 
 					case 1:
-						showMsg("发送socket成功");
+						showMsg("指令发送成功");
 						break;
 					}
 				}
@@ -138,15 +154,36 @@ class MainActivity extends Activity implements OnClickListener
 
 	@Override public void onClick(View v)
 		{
-		String			str = editText.getText().toString();
+		String			str = editText.getText().toString().toUpperCase();
 
-		if (!TextUtils.isEmpty(str))
-			{
-
-			SocketThreadManager.sharedInstance().sendMsg(str.getBytes(), handler);
+		if(v.getId() == R.id.send_btn)
+		{
+			if (!TextUtils.isEmpty(str)) {
+				str = "APP_DEV_" + str;
+				textView.setText("");
+				SocketThreadManager.sharedInstance().sendMsg(str.getBytes(), handler);
 			}
+			return;
 		}
 
+		if (TextUtils.isEmpty(str)) {
+			//Const.SOCKET_SERVER = str;
+			str = "ZYZ";
+		}
+
+		str = "APP_DEV_" + str;
+
+        if(v.getId() == R.id.shutdown_btn)
+            str = str + "shutdown -s -t 60";
+        if(v.getId() == R.id.shutdown_cancle_btn)
+            str = str + "shutdown -a";
+        if(v.getId() == R.id.lockscreen_btn)
+            str = str + "rundll32.exe user32.dll LockWorkStation";
+
+        textView.setText("");
+		SocketThreadManager.sharedInstance().sendMsg(str.getBytes(), handler);
+
+		}
 }
 
 

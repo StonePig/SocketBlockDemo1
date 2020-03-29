@@ -9,38 +9,63 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="400dip"
-         android:id="@+id/res_txt"
+        android:id="@+id/res_txt"
+        android:layout_width="368dp"
+        android:layout_height="869dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="false"
+        android:layout_marginTop="3dp"
         android:text="@string/hello_world" />
-    
-    <LinearLayout 
+
+    <Button
+        android:id="@+id/shutdown_btn"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="160dp"
+        android:layout_marginRight="220dp"
+        android:text="立即关机"></Button>
+
+    <Button
+        android:id="@+id/shutdown_cancle_btn"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="220dp"
+        android:text="取消关机"></Button>
+
+    <Button
+        android:id="@+id/lockscreen_btn"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="355dp"
+        android:layout_marginRight="220dp"
+        android:text="锁屏"></Button>
+
+    <LinearLayout
         android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@id/res_txt"
-          android:orientation="horizontal"
-        >
-         <EditText
-        android:layout_width="150dip"
-        android:layout_height="50dip"
-      
-         android:id="@+id/socket_txt"
-        />
-           
-            <Button
-        android:id="@+id/send_btn"
-        android:text="发送socket"
-         android:layout_width ="90dip"
-         android:layout_height="wrap_content">
-            </Button>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/res_txt"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-79dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/socket_txt"
+            android:layout_width="150dip"
+
+            android:layout_height="50dip" />
 
         <Button
-            android:id="@+id/send_connect"
-            android:text="连接socket"
-            android:layout_width ="90dip"
+            android:id="@+id/send_btn"
+            android:layout_width="173dp"
             android:layout_height="wrap_content"
-            android:onClick="connect_socket">
-        </Button>
+            android:text="ok"></Button>
 
 
     </LinearLayout>

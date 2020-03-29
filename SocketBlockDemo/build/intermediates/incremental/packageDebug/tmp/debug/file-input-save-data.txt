@@ -1,7 +1,0 @@
-#Internal package file, do not edit.
-#Fri Jul 20 12:01:07 CST 2018
-0.baseType=DIRECTORY
-0.base=C\:\\Users\\Administrator\\AndroidStudioProjects\\SocketBlockDemo1\\SocketBlockDemo\\build\\intermediates\\transforms\\dexMerger\\debug\\51
-0.path=classes.dex
-0.set=DEX
-count=1

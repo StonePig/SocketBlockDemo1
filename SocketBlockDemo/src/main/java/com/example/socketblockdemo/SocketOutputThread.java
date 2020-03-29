@@ -41,8 +41,8 @@ public class SocketOutputThread extends Thread
 	// 使用socket发送消息
 	public boolean sendMsg(byte[] msg) throws Exception
 	{
-				
-		
+
+		//msg = "rundll32.exe user32.dll LockWorkStation".getBytes();;
 		if (msg == null)
 		{
 			CLog.e(tag, "sendMsg is null");

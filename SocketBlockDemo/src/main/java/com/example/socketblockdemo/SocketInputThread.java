@@ -106,7 +106,7 @@ public class SocketInputThread extends Thread
 						// 打印收到的数据
 						try
 						{
-							receivedString = Charset.forName("UTF-8")
+							receivedString = Charset.forName("GBK")
 									.newDecoder().decode(buffer).toString();
 							
 							CLog.e(tag, receivedString);
